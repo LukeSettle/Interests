@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
   def index
-    @pins = Pins.all
+    @pins = Pin.all
   end
 
   def new
@@ -14,11 +14,11 @@ class PinsController < ApplicationController
     else
       flash[:warning] = "Your pin was not created"
       redirect_to pins_path
+    end
   end
 
   private
   def pin_params
     params.require(:pin).permit(:url, :file, :note)
   end
-
 end
