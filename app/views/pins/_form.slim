@@ -1,0 +1,4 @@
+= simple_form_for @pin, :remote => true, :html => { :'data-type' => 'html', :id => 'create_pin_form' } do |f|
+  = f.input :url
+  = f.input :note
+  = f.button :submit

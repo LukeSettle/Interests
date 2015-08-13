@@ -1,3 +1,10 @@
-- @pins.each do |pin|
-  h1 = link_to "#{pin.url}", "#{pin.url}"
-  p = pin.note
+.row
+  - @pins.each do |pin|
+    .col-sm-6.col-md-4
+      .thumbnail
+        img src="http://www.hydroponicsnewyorkcity.com/wp-content/uploads/2014/02/river-rocks.jpg"
+        .caption
+          h3 = link_to "#{pin.url}", "#{pin.url}"
+          p = pin.note
+h1 New Pin
+= render 'form'
