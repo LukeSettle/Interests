@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+gem 'bootstrap-sass'
+gem 'foreman'
 gem 'pg'
+gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'slim'
 gem 'simple_form'

@@ -2,8 +2,12 @@ class PinsController < ApplicationController
   def index
     @pin = Pin.new
     @pins = Pin.all
+    render json: @pins
   end
 
+  def home
+    @pin = Pin.new
+  end
   def new
     @pin = Pin.new
   end
@@ -14,25 +18,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(pin_params)
-    respond_with do |format|
-      format.html do
-        if request.xhr?
-          render :partial => "pin/show", :locals => { :pin => @pin }, :layout => false, :status => :created
-        else
-          redirect_to @pin
-        end
-      end
-    end
-  else
-    respond_with do |format|
-      format.html do
-        if request.xhr?
-          render :json => @pin.errors, :status => :unprocessable_entity
-        else
-          render :action => :new, :status => :unprocessable_entity
-        end
-      end
-    end
+    @pin.save
   end
 
   private
