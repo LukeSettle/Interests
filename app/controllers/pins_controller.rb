@@ -18,7 +18,9 @@ class PinsController < ApplicationController
   end
 
   def create
+    authenticate_user!
     @pin = Pin.new(pin_params)
+    @pin.user_id = current_user.id
     if @pin.save
       render json: @pin
     else
