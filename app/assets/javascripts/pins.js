@@ -39,6 +39,7 @@ $(function(){
         $.each(data, function(i, data){
           $url.append('<li><h1><a href='+ data.url + '>'+ data.url +'</a></h1></li>');
           $url.append('<li><p>note: '+data.note+'</p></li>')
+          $url.append('image_tag attachment_url('+ data +', :'+ data.file +', :fill, 300, 300, format: "jpg")')
         })
       },
       error: function(){
