@@ -8,6 +8,7 @@ class PinsController < ApplicationController
   def home
     @pin = Pin.new
   end
+
   def new
     @pin = Pin.new
   end
@@ -18,7 +19,11 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(pin_params)
-    @pin.save
+    if @pin.save
+      render json: @pin
+    else
+      render json: {errors: @pin.errors}, status: :unprocessable_entity
+    end
   end
 
   private

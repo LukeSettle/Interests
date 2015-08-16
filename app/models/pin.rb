@@ -1,3 +1,3 @@
 class Pin < ActiveRecord::Base
-  validates :url, presence: true
+validates :url, presence: true
 end

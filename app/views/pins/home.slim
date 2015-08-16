@@ -16,23 +16,27 @@ ul#url
 
 javascript:
 
-  $(document).ready(function(){
-    $(".modal-toggle").click(function(){
-      $('#myModal').modal('toggle');
-    });
-
+  $(function(){
     var $url = $('#url');
     var $note = $('#note')
-    var $url_field = $('#url-field');
-    var $note_field = $('#note-field');
+    var $pin_url = $('#pin_url');
+    var $pin_note = $('#pin_note');
+
+    $(".modal-toggle").click(function(){
+      $('#myModal').modal('toggle');
+      $('#pin_url').val('');
+      $('#pin_note').val('');
+    });
+
     $.ajax({
       type: 'GET',
       url: 'pins',
+      dataType: 'JSON',
       success: function(data) {
         $.each(data, function(i, data){
-          $url.append('<li><h1>url: '+ data.url +'</h1></li>');
+          $url.append('<li><h1><a href='+ data.url + '>'+ data.url +'</a></h1></li>');
           $url.append('<li><p>note: '+data.note+'</p></li>')
-        });
+        })
       },
       error: function(){
       alert("Error loading pins")
@@ -40,17 +44,24 @@ javascript:
     });
 
     $('#add-pin').on('click', function(){
-      var pin = {
-        url: $url.val(),
-        note: $note.val(),
-        };
+      $('#myModal').modal('hide')
       $.ajax({
         type: 'POST',
         url: 'pins',
-        data: pin,
+        data: JSON.stringify({
+          url: $pin_url.val(),
+          note: $pin_note.val(),
+          }),
         success: function(newPin) {
-          $url.append('<li><h1> url: '+ newPin.url +'</h1></li>')
-          }
-        });
+          console.log(newPin.url)
+          $url.append('<li><h1><a href='+ newPin.url + '>'+ newPin.url +'</a></h1></li>');
+          $url.append('<li><p>note: '+ newPin.note +'</p></li>');
+          },
+        error: function(e) {
+          console.log(e);
+        },
+        dataType: "json",
+        contentType: "application/json"
+      });
     });
   });
