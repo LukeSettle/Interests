@@ -1,8 +1,13 @@
 class PinsController < ApplicationController
   def index
     @pin = Pin.new
-    @pins = Pin.all
-    render json: @pins
+    if current_user
+      @pins = current_user.pins
+      render json: @pins
+    else
+      @pins = Pin.all
+      render json: @pins
+    end
   end
 
   def home
