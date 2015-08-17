@@ -24,7 +24,7 @@ $(function(){
           file: $pin_file.val(),
           }),
         success: function(newPin) {
-          $url.append('<li class="inner"><h1><a href=http://'+ newPin.url + '>'+ newPin.url +'</a></h1><p>note: '+ newPin.note +'</p><img src="'+ newPin.file +'"></img></li>');
+          $url.append('<li class="inner"><img src="'+ newPin.file +' hight="400" width="400"></img><h1><a href=http://'+ newPin.url + '>'+ newPin.url +'</a></h1><p>note: '+ newPin.note +'</p></li>');
           },
         error: function(e) {
           console.log(e);
@@ -38,7 +38,7 @@ $(function(){
       dataType: 'JSON',
       success: function(data) {
         $.each(data, function(i, data){
-          $url.append('<li><h1><a href=http://'+ data.url + '>'+ data.url +'</a></h1><p>note: '+data.note+'</p><img src="'+ data.file +'"></img></li>');
+          $url.append('<li><img src="'+ data.file +'" hight="400" width="400"></img><h1><a href=http://'+ data.url + '>'+ data.url +'</a></h1><p>note: '+data.note+'</p></li>');
         })
       },
       error: function(){
