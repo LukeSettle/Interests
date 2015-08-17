@@ -1,10 +1,14 @@
-- if current_user
-  h3.btn.btn-default.modal-toggle New Pin
-  h3.btn.btn-default
-    = link_to "Sign Out", destroy_user_session_path, method: :delete
-- else
-  h3.btn.btn-default
-    = link_to "Sign_in", new_user_session_path
+.nav
+  - if current_user
+    h3.btn.btn-default.modal-toggle New Pin
+    img.symbol src="http://www.jesuspictures.co/jesus-fish-image.jpg"
+    h3.btn.btn-default
+      = link_to "Sign Out", destroy_user_session_path, method: :delete
+  - else
+    .login-pic
+      img src="https://bree1972.files.wordpress.com/2010/06/rocks2.jpg"
+    h3.btn.btn-primary.btn-lg.sign-in
+      .link-sign-in = link_to "Sign_in", new_user_session_path
 
 .modal.fade#myModal
   .modal-dialog
