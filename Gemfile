@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'active_model_serializers'
 gem 'devise'
-gem "refile", require: "refile/rails"
-gem "refile-mini_magick"
+gem 'remotipart', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'foreman'
 gem 'pg'
