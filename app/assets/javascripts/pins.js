@@ -39,6 +39,7 @@ $(function(){
         $.each(data, function(i, data){
           $url.append('<li><h1><a href='+ data.url + '>'+ data.url +'</a></h1></li>');
           $url.append('<li><p>note: '+data.note+'</p></li>')
+          $url.append('<li><img src="'+ data.file +'"></img></li>')
         })
       },
       error: function(){
