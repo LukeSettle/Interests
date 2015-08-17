@@ -3,6 +3,7 @@ $(function(){
     var $note = $('#note')
     var $pin_url = $('#pin_url');
     var $pin_note = $('#pin_note');
+    var $pin_file = $('#pin_file')
 
     $(".modal-toggle").click(function(){
       $('#myModal').modal('toggle');
@@ -20,10 +21,10 @@ $(function(){
         data: JSON.stringify({
           url: $pin_url.val(),
           note: $pin_note.val(),
+          file: $pin_file.val(),
           }),
         success: function(newPin) {
-          $url.append('<li><h1><a href='+ newPin.url + '>'+ newPin.url +'</a></h1></li>');
-          $url.append('<li><p>note: '+ newPin.note +'</p></li>');
+          $url.append('<li><h1><a href='+ newPin.url + '>'+ newPin.url +'</a></h1><p>note: '+ newPin.note +'</p><img src="'+ newPin.file +'"></img></li>');
           },
         error: function(e) {
           console.log(e);
@@ -37,9 +38,7 @@ $(function(){
       dataType: 'JSON',
       success: function(data) {
         $.each(data, function(i, data){
-          $url.append('<li><h1><a href='+ data.url + '>'+ data.url +'</a></h1></li>');
-          $url.append('<li><p>note: '+data.note+'</p></li>')
-          $url.append('<li><img src="'+ data.file +'"></img></li>')
+          $url.append('<li><h1><a href='+ data.url + '>'+ data.url +'</a></h1><p>note: '+data.note+'</p><img src="'+ data.file +'"></img></li>');
         })
       },
       error: function(){
