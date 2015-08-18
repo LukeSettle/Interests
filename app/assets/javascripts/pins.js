@@ -6,7 +6,7 @@ $(function(){
     var $pin_file = $('#pin_file')
 
     var appendPicture = function(data) {
-      $url.append('<li><img src="'+ data.file+ '", hight="50%" width="50%"></img><h1><a href="http://'+ data.url+ '">'+ data.url+ '</a></h1><p>note: '+ data.note+ '</p></li>');
+      $url.append('<li><img src="'+ data.file+ '", height="50%" width="50%"></img><h1><a href="http://'+ data.url+ '">'+ data.url+ '</a></h1><p>note: '+ data.note+ '</p></li>');
     }
 
     $.ajax({
@@ -29,10 +29,7 @@ $(function(){
           contentType: "application/json; charset=utf-8",
           url: 'pins',
           dataType: 'json',
-          data: JSON.stringify({ url: $pin_url.val(), note: $pin_note.val(), file: $pin_file.val() }),
-          success: function(newPin) {
-            appendPicture
-          }
+          data: JSON.stringify({ url: $pin_url.val(), note: $pin_note.val(), file: $pin_file.val() })
         });
         $("#myModal").modal('toggle'),
         $("#url").empty(),
