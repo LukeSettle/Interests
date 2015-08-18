@@ -6,8 +6,11 @@ $(function(){
     var $pin_file = $('#pin_file')
 
     var appendPicture = function(data) {
-      $url.append('<li><img src="'+ data.file+ '", height="50%" width="50%"></img><h1><a href="http://'+ data.url+ '">'+ data.url+ '</a></h1><p>note: '+ data.note+ '</p></li>');
+      $url.append('<li><a class="pic-show" href="#"><img class="each-pin" src="'+ data.file+ '", height="50%" width="50%"></img></a><h1><a href="http://'+ data.url+ '">'+ data.url+ '</a></h1><p>note: '+ data.note+ '</p></li>');
     }
+    $(".each-pin").click(function(){
+      $(".showPartial").toggleClass("visible");
+    });
 
     $.ajax({
       type: 'GET',

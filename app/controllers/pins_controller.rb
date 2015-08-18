@@ -12,6 +12,7 @@ class PinsController < ApplicationController
 
   def home
     @pin = Pin.new
+    @pinId = Pin.find(params[:id])
   end
 
   def new
