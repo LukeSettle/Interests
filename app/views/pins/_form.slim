@@ -1,7 +1,6 @@
-= simple_form_for @pin, :remote => true, :html => { :'data-type' => 'html', :id => 'create_pin_form', :multipart => true } do |f|
+= simple_form_for @pin, :html => { :'data-type' => 'html', :id => 'create_pin_form', :multipart => true } do |f|
   #url-field = f.input :url
   .validation-error
   #note-field = f.input :note
   #file-field = f.input :file
-  = f.button :submit
 .modal-footer
