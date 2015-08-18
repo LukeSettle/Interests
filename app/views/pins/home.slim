@@ -6,9 +6,8 @@
       = link_to "Sign Out", destroy_user_session_path, method: :delete
   - else
     .login-pic
-      img src="https://bree1972.files.wordpress.com/2010/06/rocks2.jpg"
-    h3.btn.btn-primary.btn-lg.sign-in
-      .link-sign-in = link_to "Sign_in", new_user_session_path
+      .link-sign-in
+      = link_to "Sign_in", new_user_session_path, class: "btn btn-primary btn-lg sign-in"
 
 .modal.fade#myModal
   .modal-dialog
