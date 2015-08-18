@@ -27,23 +27,23 @@ $(function(){
       $('#myModal').modal('toggle');
       $('#pin_url').val('');
       $('#pin_note').val('');
+      $('pin_file').val('')
     });
 
     $('#create_pin_form').submit(function(){
-      $('#myModal').modal('hide');
-      success:
-        $.ajax({
-          type: 'GET',
-          url: 'pins',
-          dataType: 'JSON',
-          success: function(data) {
-            $.each(data, function(i, data){
-              appendPicture(data);
-            })
-          },
-          error: function(){
-            alert("Error loading pins")
-          }
-        });
+      $("#myModal").hide;
+      getPins = $.ajax({
+        type: 'GET',
+        url: 'pins',
+        dataType: 'JSON',
+        success: function(data) {
+          $.each(data, function(i, data){
+            appendPicture(data);
+          })
+        },
+        error: function(){
+          alert("Error loading pins")
+        }
+      });
     });
   });
