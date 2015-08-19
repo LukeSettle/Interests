@@ -1,7 +1,8 @@
 .row
+  -@pins.each do |pin|
   .col-sm-6.col-md-4
     .thumbnail
-      img src="#{@pinId.file}"
+      img src="pin.file"
       .caption
-        h3 = link_to "#{@pinId.url}", "#{@pinId.url}"
-        p = @pinId.note
+        h3 = link_to pin.url, pin.url
+        p = pin.note

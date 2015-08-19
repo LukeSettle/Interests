@@ -1,16 +1,19 @@
 $(function(){
-    var $url = $('#url');
     var $note = $('#note')
     var $pin_url = $('#pin_url');
     var $pin_note = $('#pin_note');
     var $pin_file = $('#pin_file')
 
     var appendPicture = function(data) {
-      $url.append('<li><a class="pic-show" href="#"><img class="each-pin" src="'+ data.file+ '", height="50%" width="50%"></img></a><h1><a href="http://'+ data.url+ '">'+ data.url+ '</a></h1><p>note: '+ data.note+ '</p></li>');
+      console.log("adding component");
+      var id = "picture-" + data.id;
+      $("#url").append('<div id="' + id + '">');
+      React.render(React.createElement(Pin, data), document.getElementById(id));
     }
-    $(".each-pin").click(function(){
-      $(".showPartial").toggleClass("visible");
-    });
+
+    $('.show-pic').click(function(){
+      $('.each-pic').toggleClass('pic-modal');
+    })
 
     $.ajax({
       type: 'GET',
@@ -19,7 +22,7 @@ $(function(){
       success: function(data) {
         $.each(data, function(i, data){
           appendPicture(data);
-        })
+        });
       },
       error: function(){
         alert("Error loading pins")

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '4.2.3'
+gem 'react-rails', '~> 1.0'
 gem 'active_model_serializers'
 gem 'devise'
 gem 'remotipart', '~> 1.2'

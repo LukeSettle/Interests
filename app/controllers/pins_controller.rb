@@ -12,15 +12,11 @@ class PinsController < ApplicationController
 
   def home
     @pin = Pin.new
-    @pinId = Pin.find(params[:id])
-  end
-
-  def new
-    @pin = Pin.new
   end
 
   def show
     @pin = Pin.find(params[:id])
+    render json: @pin
   end
 
   def create
