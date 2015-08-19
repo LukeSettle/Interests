@@ -6,32 +6,7 @@ $(function(){
 
     $('.show-pic').click(function(){
       $('.each-pic').toggleClass('pic-modal');
-    })
-
-    $("#add-pin").click(function(){
-        $.ajax({
-          type: 'POST',
-          contentType: "application/json; charset=utf-8",
-          url: 'pins',
-          dataType: 'json',
-          data: JSON.stringify({ url: $pin_url.val(), note: $pin_note.val(), file: $pin_file.val() })
-        });
-        $("#myModal").modal('toggle'),
-        $("#url").empty(),
-        $.ajax({
-          type: 'GET',
-          url: 'pins',
-          dataType: 'JSON',
-          success: function(data) {
-            $.each(data, function(i, data){
-              appendPicture(data);
-            })
-          },
-          error: function(){
-            alert("Error loading pins")
-          }
-      });
-    });
+    }),
 
     $(".modal-toggle").click(function(){
       $('#myModal').modal('toggle');

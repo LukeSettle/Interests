@@ -9,16 +9,5 @@
       .link-sign-in
       = link_to "Sign_in", new_user_session_path, class: "btn btn-primary btn-lg sign-in"
 
-.modal.fade#myModal
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button type="button" class="close" data-dismiss="modal" aria-label="Close"
-          span aria-hidden="true"
-        h4.modal-title New Pin
-      .modal-body
-        = render 'form'
-        button.btnbtn-default#add-pin type="button"  data-dismiss="modal" Submit
-        button.btnbtn-default type="button"  data-dismiss="modal" Close
 
-= react_component 'PinList'
+= react_component 'PinApp'
