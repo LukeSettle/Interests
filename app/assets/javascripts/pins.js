@@ -4,30 +4,9 @@ $(function(){
     var $pin_note = $('#pin_note');
     var $pin_file = $('#pin_file')
 
-    var appendPicture = function(data) {
-      console.log("adding component");
-      var id = "picture-" + data.id;
-      $("#url").append('<div id="' + id + '">');
-      React.render(React.createElement(Pin, data), document.getElementById(id));
-    }
-
     $('.show-pic').click(function(){
       $('.each-pic').toggleClass('pic-modal');
     })
-
-    $.ajax({
-      type: 'GET',
-      url: 'pins',
-      dataType: 'JSON',
-      success: function(data) {
-        $.each(data, function(i, data){
-          appendPicture(data);
-        });
-      },
-      error: function(){
-        alert("Error loading pins")
-      }
-    });
 
     $("#add-pin").click(function(){
         $.ajax({
