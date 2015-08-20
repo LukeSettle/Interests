@@ -5,9 +5,6 @@
 body
   height: 100%
 
-.pic-modal
-  
-
 .login-pic
   background-image: url("https://bree1972.files.wordpress.com/2010/06/rocks2.jpg")
   background-size: cover
@@ -24,17 +21,21 @@ body
 .sign-in
   position: absolute
   top: 5em
-
-ul#url
-  display: block
-  margin: 0px auto
-  text-align: center
-  li
-    list-style-type: none
-    background: lightgrey
-    padding: 5px
+ul.pinsList
+  margin: 20px
+  li.each-pic
+    background: rgba(81, 239, 165, 0.92)
     border-radius: 5px
-    margin: 20px
+    border-bottom: 2px solid gray
+    list-style-type: none
+    padding: 5px
+    text-align: center
+    margin: 20px 20% 20px 20%
+    img
+      display: block
+      margin: 0px auto
+      border: solid 5px #256F5B
+      border-radius: 3px
 
 .nav
   border-bottom: solid 1px lightgrey
