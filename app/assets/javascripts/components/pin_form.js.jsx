@@ -15,7 +15,6 @@ var PinForm = React.createClass({
   render: function() {
     return (
         <form>
-          <div onClick={this.onSubmit}>Foo</div>
           <input ref="url" type="text" placeholder="URL" />
           <input ref="note" type="text" placeholder="Note" />
           <input ref="file" type="text" placeholder="Picture" />
