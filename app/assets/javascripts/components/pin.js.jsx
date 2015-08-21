@@ -8,7 +8,7 @@ var Pin = React.createClass({
   render: function() {
     return (
       <li className="each-pic">
-        <img className="show-pic" src={this.props.file_id} height="50%" width="50%"/>
+        <attachment_url className="show-pic" src={this.props.file_id} height="50%" width="50%"/>
         <h1>{this.props.url}</h1>
         <p>note: {this.props.note}</p>
       </li>

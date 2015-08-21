@@ -3,6 +3,7 @@ gem 'rails', '4.2.3'
 gem 'react-rails', '~> 1.0'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+gem 'refile-postgres'
 gem 'active_model_serializers'
 gem 'devise'
 gem 'bootstrap-sass'
