@@ -4,7 +4,7 @@ var PinForm = React.createClass({
     this.props.addPin({
       url: this.refs.url.getDOMNode().value,
       note: this.refs.note.getDOMNode().value,
-      file: this.refs.file.getDOMNode().value
+      file_id: this.refs.file_id.getDOMNode().value
     }, this.onComplete);
     e.preventDefault();
   },
@@ -17,7 +17,7 @@ var PinForm = React.createClass({
         <form>
           <input ref="url" type="text" placeholder="URL" />
           <input ref="note" type="text" placeholder="Note" />
-          <input ref="file" type="text" placeholder="Picture" />
+          <input ref="file_id" type="file" placeholder="Picture" />
           <button onClick={this.onSubmit}>Submit</button>
         </form>
       )

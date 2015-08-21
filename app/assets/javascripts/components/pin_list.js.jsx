@@ -7,7 +7,7 @@ var PinList = React.createClass({
 
   render: function() {
     function item(d) {
-      return <Pin url={d.url} note={d.note} file={d.file} key={d.id}/>;
+      return <Pin url={d.url} note={d.note} file_id={d.file_id} key={d.id}/>;
     }
     return <ul className="pinsList row">{this.props.list.map(item)}</ul>;
   }

@@ -32,6 +32,6 @@ class PinsController < ApplicationController
 
   private
   def pin_params
-    params.require(:pin).permit(:url, :file, :note)
+    params.require(:pin).permit(:url, :file_id, :note)
   end
 end

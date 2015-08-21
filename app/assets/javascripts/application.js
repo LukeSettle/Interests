@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.remotipart
 //= require react
 //= require react_ujs
 //= require components

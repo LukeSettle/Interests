@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'react-rails', '~> 1.0'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 gem 'active_model_serializers'
 gem 'devise'
-gem 'remotipart', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'foreman'
 gem 'pg'
@@ -16,7 +17,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'will_paginate', '~> 3.0.6'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :production do
